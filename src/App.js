@@ -6,7 +6,7 @@ import night from './assets/night.jpg';
 
 function App() {
 
-  const [backgroundImg, setBackgroundImg] = useState('night');
+  const [backgroundImg, setBackgroundImg] = useState('day');
 
   return (
     <div className="App" style={ backgroundImg === 'night' ? backgroundNight : backgroundDay }>
