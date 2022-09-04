@@ -1,25 +1,34 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
+import daytime from './assets/daytime.jpg';
+import night from './assets/night.jpg';
+
 
 function App() {
+
+  const [backgroundImg, setBackgroundImg] = useState('night');
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App" style={ backgroundImg === 'night' ? backgroundNight : backgroundDay }>
+      
     </div>
   );
+}
+
+const backgroundNight = {
+  width: '100vw',
+  height: '100vh',
+  backgroundImage: `url(${night})`,
+  backgroundSize:'100vw 100vh',
+  backgroundRepeat:"no-repeat"
+}
+
+const backgroundDay = {
+  width: '100vw',
+  height: '100vh',
+  backgroundImage: `url(${daytime})`,
+  backgroundSize:'100vw 100vh',
+  backgroundRepeat:"no-repeat"
 }
 
 export default App;
