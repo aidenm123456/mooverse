@@ -8,9 +8,20 @@ function App() {
 
   const [backgroundImg, setBackgroundImg] = useState('day');
 
+
   return (
     <div className="App" style={ backgroundImg === 'night' ? backgroundNight : backgroundDay }>
-      
+      <div style={topRow}>
+
+        <div style={topLeft}>
+          <button>Docs/Litepaper</button>
+        </div>
+
+        <div style={topRight}>
+          <button>Connect Metamask</button>
+        </div>
+
+      </div>
     </div>
   );
 }
@@ -29,6 +40,23 @@ const backgroundDay = {
   backgroundImage: `url(${daytime})`,
   backgroundSize:'100vw 100vh',
   backgroundRepeat:"no-repeat"
+}
+
+const topRow = {
+  display: 'flex',
+  width: '100vw'
+}
+
+const topLeft = {
+  display: 'flex',
+  width: '50%',
+  justifyContent:'start',
+}
+
+const topRight = {
+  display: 'flex',
+  width: '50%',
+  justifyContent:'end',
 }
 
 export default App;
